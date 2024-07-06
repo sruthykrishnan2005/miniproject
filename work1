@@ -24,6 +24,6 @@ while True:
         if a_name in name:
             name.remove(a_name)
         else:
-            print('no')
-
-    
+            print("no")
+    elif ch==5:
+        break
