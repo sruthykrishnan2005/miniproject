@@ -23,8 +23,22 @@ while True:
             for booking in bookings:
                 print(f"Name: {booking['name']}, Destination: {booking['destination']}")
             print()
-    
+
     elif ch == '4':
+        cancel_name = input("Enter name to cancel booking: ")
+        cancel_destination = input("Enter destination to cancel booking: ")
+        for booking in bookings:
+            found=False
+            if booking['name'].lower() == cancel_name.lower() and booking['destination'].lower() == cancel_destination.lower():
+                bookings.remove(booking)
+                found=True
+                print("Booking for {cancel_name} to {cancel_destination} cancelled.\n")
+                break
+        
+        if not found:
+            print("Booking not found for {cancel_name} to {cancel_destination}\n")
+    
+    elif ch == '5':
         print("\nExiting the system.")
         break
     
