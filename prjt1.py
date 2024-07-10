@@ -1,6 +1,14 @@
 bookings=[]
 
 while True:
+    username = input("\nEnter username: ")
+    password = input("Enter password: ")
+
+    print("Welcome")
+    break
+
+
+while True:
     print("1.add a new tourist destination \n 2.book a tour \n 3.view all bookings \n 4.exit \n")
 
     ch=input("enter your choice:")
