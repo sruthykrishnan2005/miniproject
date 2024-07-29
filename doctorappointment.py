@@ -56,12 +56,12 @@ class AppointmentSystem:
 # Example usage
 if __name__ == "__main__":
     # Create doctors
-    doc1 = Doctor("Alice Smith", 40, "Cardiologist")
-    doc2 = Doctor("Bob Brown", 50, "Neurologist")
+    doc1 = Doctor("Anu", 40, "Cardiologist")
+    doc2 = Doctor("Boby", 50, "Neurologist")
 
     # Create patients
-    pat1 = Patient("John Doe", 30, "P001")
-    pat2 = Patient("Jane Roe", 25, "P002")
+    pat1 = Patient("John", 30, "P001")
+    pat2 = Patient("manu", 25, "P002")
 
     # Create the appointment system
     system = AppointmentSystem()
@@ -72,46 +72,4 @@ if __name__ == "__main__":
 
     # Show all appointments
     system.show_appointments()
-
-
-    while True:
-        print("\n1. Book Appointment")
-        print("2. Cancel Appointment")
-        print("3. Show Appointments")
-        print("4. Exit")
-        choice = input("Enter your choice: ")
-
-        if choice == '1':
-            patient_name = input("Enter patient name: ")
-            patient_id = input("Enter patient ID: ")
-            doctor_name = input("Enter doctor name: ")
-            date_time = input("Enter appointment date and time (YYYY-MM-DD HH:MM): ")
-            try:
-                appointment = system.book_appointment(doctor_name, patient_name, patient_id, date_time)
-                print(f"Booked: {appointment}")
-            except ValueError as e:
-                print(e)
-
-        elif choice == '2':
-            patient_id = input("Enter patient ID: ")
-            doctor_name = input("Enter doctor name: ")
-            date_time = input("Enter appointment date and time (YYYY-MM-DD HH:MM): ")
-            try:
-                appointment = system.cancel_appointment(doctor_name, patient_id, date_time)
-                print(f"Cancelled: {appointment}")
-            except ValueError as e:
-                print(e)
-
-        elif choice == '3':
-            system.show_appointments()
-
-        elif choice == '4':
-            print("Exiting...")
-            break
-
-        else:
-            print("Invalid choice. Please enter a number between 1 and 4.")
-
-if __name__ == "__main__":
-    main()
 
